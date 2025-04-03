@@ -7,67 +7,67 @@ import { ImageIcon, Users } from 'lucide-react';
 const images = [
   { 
     id: 1, 
-    url: '../assets/gallery/image1.jpg', 
+    url: '/assets/gallery/image1.jpg', 
     alt: 'Environmental education field trip',
     caption: 'Environmental education field trip' 
   },
   { 
     id: 2, 
-    url: '../assets/gallery/image2.jpg', 
+    url: '/assets/gallery/image2.jpg', 
     alt: 'Bday celebrations at Lakshya',
     caption: 'Birthday celebrations at Lakshya' 
   },
   { 
     id: 3, 
-    url: '../assets/gallery/image3.jpg', 
+    url: '/assets/gallery/image3.jpg', 
     alt: 'Annual celebration event',
     caption: 'Annual cultural performance by our students' 
   },
   { 
     id: 4, 
-    url: '../assets/gallery/image4.jpg', 
+    url: '/assets/gallery/image4.jpg', 
     alt: 'Educational art project',
     caption: 'Art and craft workshop for creative expression' 
   },
   { 
     id: 5, 
-    url: '../assets/gallery/image5.jpg', 
+    url: '/assets/gallery/image5.jpg', 
     alt: 'Outdoor learning activities',
     caption: 'Teacher development workshop'
   },
   { 
     id: 6, 
-    url: '../assets/gallery/image6.jpg', 
+    url: '/assets/gallery/image6.jpg', 
     alt: 'Teachers training session',
     caption: 'Environmental education field trip' 
   },
   { 
     id: 7, 
-    url: '../assets/gallery/image7.jpg', 
+    url: '/assets/gallery/image7.jpg', 
     alt: 'Community outreach program',
     caption: 'Healthcare awareness camp in the community' 
   },
   { 
     id: 8, 
-    url: '../assets/gallery/image8.jpg', 
+    url: '/assets/gallery/image8.jpg', 
     alt: 'Parent-teacher meeting',
     caption: 'Parents and teachers collaborate for child development' 
   },
   { 
     id: 9, 
-    url: '../assets/gallery/image9.jpg', 
+    url: '/assets/gallery/image9.jpg', 
     alt: 'Special event celebration',
     caption: 'Celebrating Trips at Lakshya' 
   },
   { 
     id: 10, 
-    url: '../assets/gallery/image10.jpg', 
+    url: '/assets/gallery/image10.jpg', 
     alt: 'Educational workshop',
     caption: 'Interactive learning session' 
   },
   { 
     id: 11, 
-    url: '../assets/gallery/image11.jpg', 
+    url: '/assets/gallery/image11.jpg', 
     alt: 'Student achievements',
     caption: 'Celebrating student accomplishments' 
   }
