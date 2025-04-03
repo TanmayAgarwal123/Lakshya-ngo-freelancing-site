@@ -10,62 +10,62 @@ const teamMembers = [
   { 
     name: "Manorama Gupta", 
     designation: "Founder & President",
-    image: "/src/assets/team/manorma.jpg"
+    image: "/assets/team/manorma.jpg"
   },
   { 
     name: "Rakesh Gupta", 
     designation: "Co-Founder & Teacher",
-    image: "/src/assets/team/rakesh.jpg" 
+    image: "/assets/team/rakesh.jpg" 
   },
   { 
     name: "Sunita Agrawal", 
     designation: "Director Member & Teacher",
-    image: "/src/assets/team/sunita.jpg"
+    image: "/assets/team/sunita.jpg"
   },
   { 
     name: "Govind Singh", 
     designation: "Treasurer",
-    image: "/src/assets/team/Govind.jpg"
+    image: "/assets/team/Govind.jpg"
   },
   { 
     name: "Ritu Sharma", 
     designation: "Director Member",
-    image: "/src/assets/team/ritu.jpg" 
+    image: "/assets/team/ritu.jpg" 
   },
   { 
     name: "Tanmay Agarwal", 
     designation: "Teacher",
-    image: "/src/assets/team/tanmay.jpg"
+    image: "/assets/team/tanmay.jpg"
   },
   { 
     name: "Mahek Sharma", 
     designation: "Teacher",
-    image: "/src/assets/team/mahek.jpg"
+    image: "/assets/team/mahek.jpg"
   },
   { 
     name: "Rupali Bharawa", 
     designation: "Teacher",
-    image: "/src/assets/team/rupali_bharava.jpg"
+    image: "/assets/team/rupali_bharava.jpg"
   },
   { 
     name: "Shree Bharat Narayan Jha", 
     designation: "Teacher",
-    image: "/src/assets/team/Bharat.jpg"
+    image: "/assets/team/Bharat.jpg"
   },
   { 
     name: "Madhuri Jha", 
     designation: "Teacher",
-    image: "/src/assets/team/Madhuri.jpg"
+    image: "/assets/team/Madhuri.jpg"
   },
   { 
     name: "Ramnarayan Debnath", 
     designation: "Teacher",
-    image: "/src/assets/team/Ramnarayan.jpg"
+    image: "/assets/team/Ramnarayan.jpg"
   },
   { 
     name: "Bani Debnath", 
     designation: "Teacher",
-    image: "/src/assets/team/bani.jpg"
+    image: "/assets/team/bani.jpg"
   }
 ];
 
