@@ -1,69 +1,319 @@
-# Welcome to your Lovable project
+# Lakshya - NGO Freelancing Platform
 
-## Project info
+> **"लक्ष्य"** - Your target towards meaningful impact through technology
 
-**URL**: https://lovable.dev/projects/74c2c752-6fbc-443c-9f82-19a300f86ee6
+A modern, comprehensive platform connecting NGOs with skilled freelancers to drive social impact through technology solutions, capacity building, and mission-critical projects.
 
-## How can I edit this code?
+## 🎯 Mission Statement
 
-There are several ways of editing your application.
+Lakshya bridges the gap between passionate freelancers and impact-driven NGOs, creating a sustainable ecosystem where technology meets social good. We believe that every NGO deserves access to world-class talent, and every freelancer deserves the opportunity to create meaningful change.
 
-**Use Lovable**
+## 🏗️ Technical Architecture
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/74c2c752-6fbc-443c-9f82-19a300f86ee6) and start prompting.
+### **Frontend Stack**
+- **React 18** with TypeScript for type-safe, scalable development
+- **Vite** for lightning-fast build times and development experience
+- **Tailwind CSS** for responsive, modern UI design
+- **shadcn/ui** for consistent, accessible component library
+- **React Query** for efficient state management and caching
 
-Changes made via Lovable will be committed automatically to this repo.
+### **Backend Infrastructure**
+- **Node.js** with Express.js for robust API development
+- **PostgreSQL** for reliable data storage and complex queries
+- **Redis** for caching and session management
+- **JWT Authentication** with role-based access control
+- **Socket.io** for real-time communication features
 
-**Use your preferred IDE**
+### **DevOps & Deployment**
+- **Docker** containerization for consistent deployments
+- **CI/CD Pipeline** with automated testing and deployment
+- **AWS/Azure** cloud infrastructure for scalability
+- **CDN Integration** for global content delivery
+- **Monitoring & Logging** with comprehensive error tracking
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🚀 Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- **Node.js** (v18 or higher)
+- **npm** or **yarn** package manager
+- **Git** for version control
 
-Follow these steps:
+### Local Development Setup
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/TanmayAgarwal123/Lakshya-ngo-freelancing-site.git
+   cd Lakshya-ngo-freelancing-site
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. **Set up environment variables:**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. **Open your browser:**
+   ```
+   http://localhost:5173
+   ```
+
+### Environment Configuration
+
+```bash
+# .env.example
+VITE_API_BASE_URL=http://localhost:3000/api
+VITE_STRIPE_PUBLIC_KEY=pk_test_...
+VITE_GOOGLE_MAPS_API_KEY=your_google_maps_key
+VITE_FIREBASE_CONFIG=your_firebase_config
+VITE_SENTRY_DSN=your_sentry_dsn
+
+# Backend Environment
+DATABASE_URL=postgresql://user:password@localhost:5432/lakshya
+JWT_SECRET=your_jwt_secret
+STRIPE_SECRET_KEY=sk_test_...
+EMAIL_SERVICE_API_KEY=your_email_api_key
+REDIS_URL=redis://localhost:6379
 ```
 
-**Edit a file directly in GitHub**
+## 📱 Platform Modules
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 1. **User Management System**
+```typescript
+// User roles and permissions
+enum UserRole {
+  NGO_ADMIN = 'ngo_admin',
+  NGO_MEMBER = 'ngo_member',
+  FREELANCER = 'freelancer',
+  PLATFORM_ADMIN = 'platform_admin'
+}
 
-**Use GitHub Codespaces**
+interface User {
+  id: string;
+  email: string;
+  role: UserRole;
+  profile: NGOProfile | FreelancerProfile;
+  verificationStatus: VerificationStatus;
+}
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### 2. **Project Management**
+```typescript
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  category: ProjectCategory;
+  budget: BudgetRange;
+  timeline: Timeline;
+  skills: Skill[];
+  milestones: Milestone[];
+  status: ProjectStatus;
+}
+```
 
-## What technologies are used for this project?
+### 3. **Payment & Billing**
+```typescript
+interface Payment {
+  id: string;
+  projectId: string;
+  amount: number;
+  currency: string;
+  status: PaymentStatus;
+  escrowDetails: EscrowInfo;
+  milestoneId?: string;
+}
+```
 
-This project is built with .
+## 🎨 Design System
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### **Brand Colors**
+```css
+:root {
+  --primary: #2563eb;      /* Trust Blue */
+  --secondary: #059669;    /* Impact Green */
+  --accent: #dc2626;       /* Action Red */
+  --neutral: #64748b;      /* Professional Gray */
+  --success: #10b981;      /* Success Green */
+  --warning: #f59e0b;      /* Warning Amber */
+}
+```
 
-## How can I deploy this project?
+### **Typography Scale**
+- **Headings**: Inter, system font stack
+- **Body Text**: System font stack for optimal performance
+- **Code**: JetBrains Mono for technical content
 
-Simply open [Lovable](https://lovable.dev/projects/74c2c752-6fbc-443c-9f82-19a300f86ee6) and click on Share -> Publish.
+### **Component Library**
+All components follow accessibility standards (WCAG 2.1 AA) and are built with:
+- Keyboard navigation support
+- Screen reader compatibility
+- High contrast mode support
+- Mobile-first responsive design
 
-## I want to use a custom domain - is that possible?
+## 🧪 Testing Strategy
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+### **Testing Stack**
+```bash
+# Unit Testing
+npm run test:unit          # Jest + React Testing Library
+
+# Integration Testing  
+npm run test:integration   # Cypress component tests
+
+# E2E Testing
+npm run test:e2e          # Playwright end-to-end tests
+
+# Visual Regression
+npm run test:visual       # Chromatic visual testing
+
+# Performance Testing
+npm run test:performance  # Lighthouse CI
+```
+
+### **Code Quality**
+```bash
+# Linting & Formatting
+npm run lint              # ESLint + Prettier
+npm run type-check        # TypeScript compiler
+
+# Security Scanning
+npm run security:check    # npm audit + snyk
+
+# Bundle Analysis
+npm run analyze          # Bundle size analysis
+```
+
+## 📊 Project Categories
+
+### **Technology & Development**
+- 🌐 **Web Development**: Responsive websites, web applications
+- 📱 **Mobile Apps**: iOS, Android, cross-platform solutions
+- 🎨 **UI/UX Design**: User experience design, branding, accessibility
+- 🔧 **DevOps**: Cloud infrastructure, automation, monitoring
+
+### **Digital Marketing & Content**
+- 📢 **Digital Marketing**: SEO, social media, email campaigns
+- ✍️ **Content Creation**: Copywriting, video production, graphic design
+- 📊 **Analytics**: Data analysis, reporting, dashboard creation
+- 🎯 **Strategy**: Digital transformation, technology planning
+
+### **Operations & Management**
+- 💰 **Grant Writing**: Fundraising support, proposal development
+- 📋 **Project Management**: Agile coaching, process optimization
+- 🔍 **Research**: Market research, impact assessment, data collection
+- 📚 **Training**: Digital literacy, capacity building, workshops
+
+## 🔐 Security & Privacy
+
+### **Data Protection**
+- **GDPR Compliant**: Full compliance with European data protection regulations
+- **Data Encryption**: End-to-end encryption for sensitive information
+- **Secure Authentication**: Multi-factor authentication and OAuth integration
+- **Regular Audits**: Quarterly security assessments and penetration testing
+
+### **Privacy Features**
+- **Granular Permissions**: Control what information you share
+- **Data Portability**: Export your data anytime
+- **Right to Deletion**: Complete data removal on request
+- **Transparent Policies**: Clear, understandable privacy policies
+
+## 🚀 Deployment
+
+### **Production Deployment**
+
+1. **Build the application:**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy via Lovable (Recommended):**
+   - Visit the [Lovable Project](https://lovable.dev/projects/74c2c752-6fbc-443c-9f82-19a300f86ee6)
+   - Click Share → Publish
+   - Your app will be deployed instantly
+
+3. **Alternative Deployment Options:**
+   ```bash
+   # Netlify
+   npm run build && netlify deploy --prod --dir=dist
+
+   # Vercel
+   vercel --prod
+
+   # Custom Server
+   npm run build && npm run start:prod
+   ```
+
+### **Environment-Specific Configurations**
+```bash
+# Development
+NODE_ENV=development
+
+# Staging
+NODE_ENV=staging
+VITE_API_BASE_URL=https://api-staging.lakshya.org
+
+# Production
+NODE_ENV=production
+VITE_API_BASE_URL=https://api.lakshya.org
+```
+
+## 🤝 Contributing
+
+We welcome contributions from developers, designers, and anyone passionate about social impact!
+
+### **How to Contribute**
+
+1. **Fork the repository**
+2. **Create a feature branch:**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Make your changes** and add tests
+4. **Commit with conventional commits:**
+   ```bash
+   git commit -m "feat: add amazing feature"
+   ```
+5. **Push to your branch:**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+6. **Open a Pull Request**
+
+### **Contribution Guidelines**
+- **Code Style**: Follow the established ESLint and Prettier configuration
+- **Testing**: Add tests for new features and ensure existing tests pass
+- **Documentation**: Update relevant documentation for any changes
+- **Accessibility**: Ensure all UI changes meet WCAG 2.1 AA standards
+
+### **Priority Areas for Contribution**
+- 🌐 **Internationalization**: Add support for more languages
+- ♿ **Accessibility**: Improve platform accessibility features
+- 📱 **Mobile Experience**: Enhance mobile app functionality
+- 🤖 **AI Features**: Improve matching algorithms
+- 🎨 **Design System**: Expand component library
+- 🔧 **Integrations**: Add third-party service integrations
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+**Built with ❤️ by Tanmay Agarwal**
+
+---
+
+> *"लक्ष्य सिर्फ एक प्लेटफॉर्म नहीं, एक मिशन है।"*  
+> *"Lakshya is not just a platform, it's a mission."*
